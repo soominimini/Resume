@@ -14,7 +14,7 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: Resume.tex
+          root_file: resume.tex
           latexmk_use_xelatex: true
 
       - name: Deploy PDF to personal website repo
