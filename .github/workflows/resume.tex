@@ -1,0 +1,142 @@
+\documentclass{resume} % Use the custom resume.cls style
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage[backend=biber, style=ieee, sorting=none]{biblatex}
+\addbibresource{references.bib}
+\usepackage{xcolor} % 색상 설정을 위해 추가
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=1.2in]{geometry} % Document margins
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{Soomin Shin} % Your name
+\address{Homepage: \href{https://soominimini.github.io/soomin.github.io/}{\texttt{https://soominimini.github.io/soomin.github.io/}}}
+\address{
+\href{https://scholar.google.ca/citations?hl=ko&user=1EAlZ-4AAAAJ&view_op=list_works&sortby=pubdate}{Google Scholar} \\
+ \href{https://github.com/soominimini}{Github} 
+}
+\address{Email: \texttt{soomin.shin@uwaterloo.ca}} % Your phone number and email
+
+\definecolor{CarnegieMellonRed}{RGB}{125, 173, 240}
+
+\renewenvironment{rSection}[1]{
+\sectionskip
+\textcolor{CarnegieMellonRed}{\MakeUppercase{#1}}
+\sectionlineskip
+\hrule
+\begin{list}{}{
+\setlength{\leftmargin}{1.5em}
+}
+\item[]
+}{
+\end{list}
+}
+
+\begin{document}
+
+Ph.D. candidate specializing in \textbf{Human-Robot Interaction (HRI), user-centered robot system design and AI-driven robotics} with expertise in developing socially assistive robotic systems for therapy and education. Experienced in designing AI-driven human-centered systems and conducting user studies. Passionate about applying LLMs to provide tailored therapy solutions for individual therapists and therapy needs.
+
+\begin{rSection}{Education}
+{\bf University of Waterloo} \hfill {\em Present - 09/2027 Expected} \\
+\emph{PhD. in Electrical and Computer Engineering} \hfill
+\\ \emph{Supervisor: Prof. Kerstin Dautenhahn} \hfill
+
+{\bf Korea University} \hfill
+\\  \emph{MSc. in Brain and Cognitive Engineering}\hfill
+\\ \emph{Supervisor: Prof. Christian Wallraven} \hfill
+
+{\bf Seoul Women's University}
+\\ \emph{B.A. in Child Studies}\hfill
+\\  \emph{B.E. in Multimedia}
+
+\end{rSection}
+
+\begin{rSection}{Professional Experience}
+
+% Graduate Researcher (Waterloo)
+\begin{rSubsection}{Graduate Researcher}{Social and Intelligent Robotics Research Lab, University of Waterloo}{}{}
+    \item \textbf{Research Focus}: Developing AI-driven robots for therapy tailored to individual therapists' needs.
+    
+    \item \textbf{LLM-driven Therapy System (In Progress)}: Developing an AI-embedded robot system that allows therapists to provide prompts to modify the system according to their needs.
+    \item \textbf{User-Centered Research}: Conducted co-design sessions for 2 years with therapists to refine and validate therapy-integrated robot games.
+    \item \textbf{Prototype Development}: Integrated therapist preferences into assistive robot software for real-world deployment \cite{Kickstart}.
+\end{rSubsection}
+
+\vspace{2pt}
+{\color{gray} \noindent\rule{\linewidth}{0.1pt}} % 얇은 회색 선 추가
+
+% Research Intern (KIST)
+\begin{rSubsection}{Research Intern}{Artificial Intelligence and Robotics Institute, Korea Institute of Science and Technology}{}{}
+    \item \textbf{Research Focus}: Investigated human-robot interaction, trust dynamics, and multi-agent robotics in healthcare environments.
+    \item \textbf{Heterogeneous Robot Services}: Developed and evaluated a robot-assisted system for isolation wards, incorporating telemedicine, emergency alerts, and delivery robots \cite{kwon2023heterogeneous}.
+    \item \textbf{Trust in Robot Hierarchy}: Analyzed how perceived hierarchy in a robot team impacts user trust and service evaluations \cite{shin2023hierarchies}.
+    \item \textbf{User-Control vs. Autonomy}: Studied user preferences in delegating control to robots, showing that users favor explicit verbal commands over autonomous decision-making \cite{shin2023robot}.
+\end{rSubsection}
+
+\vspace{2pt}
+{\color{gray} \noindent\rule{\linewidth}{0.1pt}} % 얇은 회색 선 추가
+
+% Graduate Researcher (Korea University)
+\begin{rSubsection}{Graduate Researcher}{Cognitive Systems Lab, Korea University}{}{}
+    \item \textbf{Research Focus}: Explored how contextual information in static images influences human and neural network model on emotion recognition.
+    \item \textbf{Human-Model Comparison Study}:  Designed and conducted experiments to compare discrepancies between human perception and model predictions on contextual emotion.
+    \item \textbf{Contextual Emotion Model Evaluation}: Assessed the performance of a pre-trained CNN-based model on the collected dataset to analyze its effectiveness in recognizing contextual emotions.
+    \item \textbf{Key Findings}: Demonstrated that contextual information significantly alters emotion perception in humans and AI systems.
+    \item \textbf{Publication}: Presented at \emph{ACM ICMI 2022} \cite{shin2022contextual}.
+\end{rSubsection}
+
+\end{rSection}
+
+\begin{rSection}{Publications} \itemsep -2pt
+
+\leavevmode\printbibliography[heading=none]
+\nocite{shin2022contextual, shin2023robot,shin2023hierarchies,kwon2023heterogeneous}
+
+\end{rSection}
+
+\begin{rSection}{TECHNICAL SKILLS} \itemsep -2pt
+
+ \item \textbf{Programming Languages:} Python, JavaScript, C, C++
+ \item \textbf{Web Development:} Flask, HTML, CSS
+ \item \textbf{Robotics and AI:}
+        \begin{enumerate}
+         \item [] Frameworks: Robot Operating System (ROS), NVIDIA Riva, PyTorch
+         \item[] Robots: \href{https://luxai.com/humanoid-social-robot-for-research-and-teaching/?_gl=1*1pa3d5s*_ga*ODAwNzg4NzQ4LjE3NDA5NDQ2Nzk.*_ga_8DZ26Q75JD*MTc0NDgyMjEzMS4xMS4xLjE3NDQ4MjMzMjQuNDYuMC4w}{QT robot}, \href{https://anki.bot/products/vector-robot}{Vector}
+         \item[] Technologies: Retrieval-Augmented Generation (RAG), Large Language Models (LLMs)
+       \end{enumerate}
+  
+\end{rSection}
+
+
+\begin{rSection}{Languages Proficiency} \itemsep -2pt
+English (Fluent), Korean (Native)
+\end{rSection}
+
+
+
+\begin{rSection}{Achievements} \itemsep -2pt
+\large{\textbf{{Graduate Research Studentship}}}\hfill {\em Present} \\
+\emph{{University of Waterloo}}\\
+\large{\textbf{{International Doctoral Student Award}}}\hfill {\em Sep 2023} \\
+\emph{{University of Waterloo}}\\
+\large{\textbf{{Provost's Doctoral Entrance Award for Women }}}\hfill {\em Sep 2023} \\
+\emph{{University of Waterloo}}\\
+\end{rSection}
+
+\begin{rSection}{Volunteering} \itemsep -2pt
+\large{\textbf{Pyunghwa welfare center}}\hfill {\em 2015} \\
+\small{Assisted a teacher for adolescents with Autism and Down syndrome}
+\end{rSection}
+
+\begin{rSection}{TEACHING \& MENTORING EXPERIENCE} \itemsep -2pt
+{\textbf{Robotics Programming Mentoring}}\hfill {\em University of Waterloo, Fall 2024 - Present} \\
+{\textbf{Teaching Assistant, University of Waterloo}}
+\begin{itemize}
+    \item []Programming for Performance (ECE459) (Winter 2025)
+    \item []Digital Computation (BME121) (Fall 2024)
+    \item []Algorithm Design and Analysis (ECE406) (Winter 2024)
+\end{itemize}
+
+
+
+\end{rSection}
+
+\end{document}
