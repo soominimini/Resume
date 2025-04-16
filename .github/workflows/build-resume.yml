@@ -1,29 +1,36 @@
-name: Build Resume and Deploy to Website
+name: Build Resume and Deploy
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout resume repo
         uses: actions/checkout@v3
 
-      - name: Compile LaTeX
+      - name: Compile Resume.tex
         uses: xu-cheng/latex-action@v2
         with:
           root_file: Resume.tex
           latexmk_use_xelatex: true
 
-      - name: Deploy PDF to personal website repo
+      - name: Copy PDF to personal website repo
         run: |
           git config --global user.name 'soominimini'
           git config --global user.email 'soominimini@naver.com'
-          git clone https://github.com/soominimini/soomin.github.io.git website
-          cp Resume.pdf website/Resume.pdf
-          cd website
+
+          # Clone personal site repo
+          git clone https://x-access-token:${{ secrets.PERSONAL_SITE_TOKEN }}@github.com/soominimini/soomin.github.io.git site
+
+          # Copy PDF over
+          cp Resume.pdf site/Resume.pdf
+
+          cd site
           git add Resume.pdf
-          git commit -m "Update Resume PDF"
-          git push https://x-access-token:${{ secrets.PERSONAL_SITE_TOKEN }}@github.com/soominimini/soomin.github.io.git main
+          git commit -m "Update Resume.pdf"
+          git push
