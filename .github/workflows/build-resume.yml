@@ -20,7 +20,7 @@ jobs:
       - name: Deploy PDF to personal website repo
         run: |
           git config --global user.name 'soominimini'
-          git config --global user.email 'your-email@example.com'
+          git config --global user.email 'soominimini@naver.com'
           git clone https://github.com/soominimini/soomin.github.io.git website
           cp Resume.pdf website/Resume.pdf
           cd website
